@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+require 'i2c_led_matrix_8x8'
+
+led = I2cLedMatrix8x8::Device.new(0x70)
+led.write([
+  %w( 1 0 1 1 1 1 0 1 ),
+  %w( 0 1 1 1 1 1 1 0 ),
+  %w( 1 1 0 0 1 1 1 1 ),
+  %w( 1 1 0 0 1 1 1 1 ),
+  %w( 1 1 1 1 1 1 1 1 ),
+  %w( 1 1 1 1 1 0 1 1 ),
+  %w( 0 1 1 1 1 1 1 0 ),
+  %w( 1 0 1 1 1 1 0 1 )
+])
